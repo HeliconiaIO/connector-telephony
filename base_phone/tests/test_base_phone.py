@@ -32,9 +32,7 @@ class TestBasePhone(TransactionCase):
         self.assertIsInstance(res, tuple)
         self.assertEqual(res[0], "res.partner")
         self.assertEqual(res[1], self.akretion.id)
-        self.assertEqual(
-            res[2], self.akretion.with_context(callerid=True).name_get()[0][1]
-        )
+        self.assertEqual(res[2], self.akretion.with_context(callerid=True).display_name)
         res = self.phco.get_record_from_phone_number("0499889988")
         self.assertFalse(res)
 
@@ -50,8 +48,8 @@ class TestBasePhone(TransactionCase):
         partner1 = rpo.create(
             {
                 "name": "Pierre Paillet",
-                "phone": "04-72-08-87-32",
-                "mobile": "06.42.77.42.66",
+                "phone": "04 72 08 87 32",
+                "mobile": "06 42 77 42 66",
             }
         )
         partner1._onchange_phone_validation()
