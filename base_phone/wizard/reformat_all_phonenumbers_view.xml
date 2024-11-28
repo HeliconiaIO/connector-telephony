@@ -34,7 +34,7 @@
                         invisible="state not in ('draft')"
                     />
                     <button
-                        name="action_next"
+                        name="execute"
                         type="object"
                         string="Close"
                         class="btn-primary"

@@ -83,7 +83,7 @@ class NumberNotFound(models.TransientModel):
         phonenumbers.number_type(parsed_num)
 
         context = dict(self._context or {})
-        context["default_%s" % self.number_type] = self.e164_number
+        context[f"default_{self.number_type}"] = self.e164_number
         action = {
             "name": _("Create New Partner"),
             "view_mode": "form,tree,kanban",
