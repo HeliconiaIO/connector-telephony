@@ -23,10 +23,7 @@ class PhoneCommon(models.AbstractModel):
         """Function to get name from phone number. Usefull for use from IPBX
         to add CallerID name to incoming calls."""
         res = self.get_record_from_phone_number(presented_number)
-        if res:
-            return res[2]
-        else:
-            return False
+        return res[2] if res else False
 
     @api.model
     def get_record_from_phone_number(self, presented_number):
@@ -87,6 +84,7 @@ class PhoneCommon(models.AbstractModel):
                 res_obj = obj.browse(obj_id)
                 # Use name_get()[0][1] instead of display_name
                 # to take the context into account with the callerid key
+                res_obj.fetch(["display_name"])
                 name = res_obj.display_name
                 res = (obj._name, res_obj.id, name)
                 _logger.debug(

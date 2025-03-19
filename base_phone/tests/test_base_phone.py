@@ -2,19 +2,20 @@
 # @author: Alexis de Lattre <alexis.delattre@akretion.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo.tests.common import TransactionCase
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestBasePhone(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.fr_country_id = self.env.ref("base.fr").id
-        self.phco = self.env["phone.common"]
-        self.env.company.write({"country_id": self.fr_country_id})
-        self.akretion = self.env["res.partner"].create(
+class TestBasePhone(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.fr_country_id = cls.env.ref("base.fr").id
+        cls.phco = cls.env["phone.common"]
+        cls.env.company.write({"country_id": cls.fr_country_id})
+        cls.akretion = cls.env["res.partner"].create(
             {
                 "name": "Akretion France",
-                "country_id": self.fr_country_id,
+                "country_id": cls.fr_country_id,
                 "phone": "+33 4 78 32 32 32",
             }
         )

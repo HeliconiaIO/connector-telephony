@@ -69,14 +69,14 @@ Authors
 Contributors
 ------------
 
-- Alexis de Lattre <alexis.delattre@akretion.com>
-- Sébastien Beau <sebastien.beau@akretion.com>
-- `Dixmit <https://www.dixmit.com>`__:
+-  Alexis de Lattre <alexis.delattre@akretion.com>
+-  Sébastien Beau <sebastien.beau@akretion.com>
+-  `Dixmit <https://www.dixmit.com>`__:
 
-  - Luis David Rodríguez
-  - Enric Tobella
+   -  Luis David Rodríguez
+   -  Enric Tobella
 
-- Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>
+-  Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>
 
 Maintainers
 -----------
